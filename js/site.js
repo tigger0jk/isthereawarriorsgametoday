@@ -55,7 +55,7 @@ $(document).ready(function(){
 
         if (todaysGame) {
             $(".fill-in").text("YES");
-            $("#game .summary").text("Giants play the " + todaysGame.opponent);
+            $("#game .summary").text("Warriors play the " + todaysGame.opponent);
             $("#game .location").text(todaysGame.location);
             $("#game .tstart").text(todaysGame.time);
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
         else {
           $(".fill-in").text("NO");
           $("#game .date").text(nextGame.date);
-          $("#game .summary").text("Giants will play the " + nextGame.opponent);
+          $("#game .summary").text("Warriors will play the " + nextGame.opponent);
           $("#game .location").text(nextGame.location);
 
           // Format next game date as day of the week
