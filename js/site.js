@@ -1,5 +1,4 @@
 var teamName = 'Warriors';
-// TODO test paths, home away, game today, no game today, etc.
 
 function isDateLaterThan(a, b) {
   if(a.getYear() > b.getYear()) {
@@ -105,13 +104,15 @@ $(document).ready(function(){
             $("#game .tstart").text(todaysGame.time);
 
             $("#game abbr").attr('title', ISODateString(nextGame.date));
-            if (todaysGame.hn.includes(teamName)) {
-                $("#game .summary").text(teamName + " play the " + todaysGame.hn);
+            if (todaysGame.hn == teamName) {
+                // home game, since our team is home the visitors are who we play
+                $("#game .summary").text(teamName + " play the " + todaysGame.vn);
                 $("body").addClass("home");
                 $("#yesno .homeaway").text("At home");
              }
              else {
-                $("#game .summary").text(teamName + " play the " + todaysGame.vn);
+                // away game, since our team is away the home team is who we play
+                $("#game .summary").text(teamName + " play the " + todaysGame.hn);
                 $("body").addClass("away");
                 $("#yesno .homeaway").text("Away");
                 $("#yesno").css("border-color", "#000");
@@ -129,12 +130,13 @@ $(document).ready(function(){
           $(".fill-in").text("NO");
           // console.log(ISODateString(nextGame.date));
           // $("#game .date").text(ISODateString(nextGame.date)); // TODO this is unused??
-          if (nextGame.hn.includes(teamName)) {
-            // home game
+          if (nextGame.hn == teamName) {
+            // home game, since our team is home the visitors are who we play
             $("#game .summary").text(teamName + " will play the " + nextGame.vn);
             // $("#nextgame .location").addClass("homegame");
             // $("body").addClass("homegame-bg");
           } else {
+            // away game, since our team is away the home team is who we play
             $("#game .summary").text(teamName + " will play the " + nextGame.hn);
           }
           $("#game .location").text(nextGame.an);
