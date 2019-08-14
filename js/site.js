@@ -32,6 +32,7 @@ function GetFormattedDateWithWeekday(date) {
 }
 
 function GetTimeFromDate(date) {
+    function pad(n){return n<10 ? '0'+n : n;}
     hour = date.getHours() + 1;
     minute = date.getMinutes();
     period = "am";
@@ -39,7 +40,7 @@ function GetTimeFromDate(date) {
       hour = hour % 12;
       period = "pm";
     }
-    return hour + ":" + minute + period;
+    return hour + ":" + pad(minute) + period;
 }
 
 $(document).ready(function(){
