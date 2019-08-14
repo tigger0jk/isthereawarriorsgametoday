@@ -6,11 +6,10 @@
 # this script currently is hardcoded for the 2019 season, see the seasonYear variable
 
 # Output format notes:
-# See the committed Warriors_schedule.json for an example
-# The "games" exported are in the same order we read them from the NBA data
-# So currently they seem to be sorted based on time correctly, but we don't explicitly sort them here
+# See the committed data/Warriors_schedule.json for an example
+# The "games" exported are in order sorted by datetime
 
-import urllib.request, json, sys, collections
+import urllib.request, json, sys, collections, copy
 
 FILE_PATH = "data/"
 
@@ -21,8 +20,8 @@ NBA_MONTHLY_SCHEDULE_KEY = 'mscd'
 NBA_GAMES_KEY = 'g'
 
 # NBA json keys for each game
-NBA_HOME_TIME_KEY = 'htm' # time of the game in the home team's time zone
-NBA_VISITOR_TIME_KEY = 'vtm' # time of the game in the visiting team's time zone
+NBA_HOME_TIME_KEY = 'htm' # datetime of the game in the home team's time zone
+NBA_VISITOR_TIME_KEY = 'vtm' # datetime of the game in the visiting team's time zone
 NBA_ARENA_NAME_KEY = 'an' # name of the arena where the game will be played
 NBA_HOME_KEY = 'h'
 NBA_VISITOR_KEY = 'v'
@@ -42,6 +41,7 @@ HOME_TEAM_CITY_KEY = 'hc'
 VISITOR_TEAM_NAME_KEY = 'vn'
 VISITOR_TEAM_CITY_KEY = 'vc'
 ARENA_NAME_KEY = 'an'
+DATE_KEY = 'd'; # datetime of the game in the desired team's time zone
 
 # list of all the teams that we want to save the schedules for with their associated website(s)
 # this could use team ids (tid) instead of names but I think names might actually be more robust
@@ -57,7 +57,7 @@ for teamName, website in TEAMS_TO_UPDATE_NAMES_AND_SITES.items():
     schedulesToExport[teamName] = collections.OrderedDict()
     schedulesToExport[teamName][TITLE_KEY] = teamName + " Game Schedule"
     schedulesToExport[teamName][LINK_KEY] = website
-    schedulesToExport[teamName][GAMES_KEY] = collections.OrderedDict()
+    schedulesToExport[teamName][GAMES_KEY] = []
 
 # TODO in theory this shouldn't be hardcoded
 # We could check if it's currently August or later, and if so use that year, otherwise use the previous year
@@ -122,18 +122,28 @@ for subSchedule in leagueSchedule:
         visitorTeamName = visitorTeam[NBA_TEAM_NAME_KEY]
 
         if homeTeamName in schedulesToExport:
-            time = game[NBA_HOME_TIME_KEY]
-            schedulesToExport[homeTeamName][GAMES_KEY][time] = gameDataToExport
+            # we do a deep copy here such that in case we export this game for both the home AND away team,
+            # they have different datetimes and we don't modify the same version of the data
+            homeGameDataToExport = copy.deepcopy(gameDataToExport)
+            homeGameDataToExport[DATE_KEY] = game[NBA_HOME_TIME_KEY]
+            schedulesToExport[homeTeamName][GAMES_KEY].append(homeGameDataToExport)
 
         if visitorTeamName in schedulesToExport:
-            time = game[NBA_VISITOR_TIME_KEY]
-            schedulesToExport[visitorTeamName][GAMES_KEY][time] = gameDataToExport
+            visitorGameDataToExport = copy.deepcopy(gameDataToExport)
+            visitorGameDataToExport[DATE_KEY] = game[NBA_VISITOR_TIME_KEY]
+            schedulesToExport[visitorTeamName][GAMES_KEY].append(visitorGameDataToExport)
 
 # print(json.dumps(schedulesToExport)) # enable for better debugging
 
-# print out how many games we have per team, would expect 82 until playoffs data is added to the JSON
 for teamName, schedule in schedulesToExport.items():
+    # sort the games by date in case the nba data isn't sorted
+    # I think this just does a string compare but that's fine for this date format
+    schedule[GAMES_KEY].sort(key=lambda game: game[DATE_KEY])
+
+    # print out how many games we have per team, would expect 82 until playoffs data is added to the JSON
     print(teamName + " games: " + str(len(schedule[GAMES_KEY])))
+
+    # write out the json
     fileName = teamName + "_schedule.json"
     with open(FILE_PATH + fileName, 'w') as outfile:
         json.dump(schedule, outfile)
