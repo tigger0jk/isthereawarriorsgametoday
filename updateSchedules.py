@@ -1,6 +1,12 @@
-#TODO README
+# This script downloads the NBA json schedule from their website
+# and parses out the data we care about into a better format for us
+# It generates a JSON schedule in our own format for the teams we want,
+# see the TEAMS_TO_UPDATE_NAMES_AND_SITES variable and add/change teams
+
+# this script currently is hardcoded for the 2019 season, see the seasonYear variable
 
 # Output format notes:
+# See the committed Warriors_schedule.json for an example
 # The "games" exported are in the same order we read them from the NBA data
 # So currently they seem to be sorted based on time correctly, but we don't explicitly sort them here
 
@@ -41,8 +47,8 @@ ARENA_NAME_KEY = 'an'
 # if that was desireable
 TEAMS_TO_UPDATE_NAMES_AND_SITES = {}
 TEAMS_TO_UPDATE_NAMES_AND_SITES['Warriors'] = 'http://isthereawarriorsgametonight.com/'
-TEAMS_TO_UPDATE_NAMES_AND_SITES['Raptors'] = 'no website currently' # TODO comment out - just using this for testing
-TEAMS_TO_UPDATE_NAMES_AND_SITES['Pelicans'] = ['site1.com', 'site2.com'] # TODO comment out - just using this for testing
+# TEAMS_TO_UPDATE_NAMES_AND_SITES['Raptors'] = 'no website currently' # just using this for testing
+# TEAMS_TO_UPDATE_NAMES_AND_SITES['Pelicans'] = ['site1.com', 'site2.com'] # just using this for testing
 
 schedulesToExport = {}
 for teamName, website in TEAMS_TO_UPDATE_NAMES_AND_SITES.items():
@@ -103,13 +109,12 @@ for subSchedule in leagueSchedule:
         assertDictHasKeys(visitorTeam, [NBA_TEAM_NAME_KEY, NBA_TEAM_CITY_KEY], 'visitorTeam')
 
         # this is the data we will save for the game if we need to, it will be keyed on time below
-        gameDataToExport = {
-                HOME_TEAM_NAME_KEY: homeTeam[NBA_TEAM_NAME_KEY],
-                HOME_TEAM_CITY_KEY: homeTeam[NBA_TEAM_CITY_KEY],
-                VISITOR_TEAM_NAME_KEY: visitorTeam[NBA_TEAM_NAME_KEY],
-                VISITOR_TEAM_CITY_KEY: visitorTeam[NBA_TEAM_CITY_KEY],
-                ARENA_NAME_KEY: game[NBA_ARENA_NAME_KEY]
-        }
+        gameDataToExport = collections.OrderedDict()
+        gameDataToExport[HOME_TEAM_NAME_KEY] = homeTeam[NBA_TEAM_NAME_KEY]
+        gameDataToExport[HOME_TEAM_CITY_KEY] = homeTeam[NBA_TEAM_CITY_KEY]
+        gameDataToExport[VISITOR_TEAM_NAME_KEY] = visitorTeam[NBA_TEAM_NAME_KEY]
+        gameDataToExport[VISITOR_TEAM_CITY_KEY] = visitorTeam[NBA_TEAM_CITY_KEY]
+        gameDataToExport[ARENA_NAME_KEY] = game[NBA_ARENA_NAME_KEY]
 
         homeTeamName = homeTeam[NBA_TEAM_NAME_KEY]
         visitorTeamName = visitorTeam[NBA_TEAM_NAME_KEY]
@@ -122,9 +127,12 @@ for subSchedule in leagueSchedule:
             time = game[NBA_VISITOR_TIME_KEY]
             schedulesToExport[visitorTeamName][GAMES_KEY][time] = gameDataToExport
 
-print(json.dumps(schedulesToExport))
+# print(json.dumps(schedulesToExport)) # enable for better debugging
 
 # print out how many games we have per team, would expect 82 until playoffs data is added to the JSON
 for teamName, schedule in schedulesToExport.items():
     print(teamName + " games: " + str(len(schedule[GAMES_KEY])))
+    fileName = teamName + "_schedule.json"
+    with open(fileName, 'w') as outfile:
+        json.dump(schedule, outfile)
 
