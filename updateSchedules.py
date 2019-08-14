@@ -12,6 +12,8 @@
 
 import urllib.request, json, sys, collections
 
+FILE_PATH = "data/"
+
 # relevant NBA json keys from their data
 # there are many more subkeys that we're not currently using that aren't defined here
 NBA_LEAGUE_SCHEDULE_KEY = 'lscd'
@@ -133,6 +135,6 @@ for subSchedule in leagueSchedule:
 for teamName, schedule in schedulesToExport.items():
     print(teamName + " games: " + str(len(schedule[GAMES_KEY])))
     fileName = teamName + "_schedule.json"
-    with open(fileName, 'w') as outfile:
+    with open(FILE_PATH + fileName, 'w') as outfile:
         json.dump(schedule, outfile)
 
