@@ -34,6 +34,7 @@ To update the schedule(s), run `python updateSchedules.py` (see comments in that
 * add a css override for your team in `css/<team>.css` - copy paste an existing one or rename it and swap the colors and font (the default font probably makes more sense than copperplate unless you're the warriors). Can override other stuff as desired
 * include your css file in `css/site.css` instead of the warriors css
 * update `about.html`
+* update `manifest.webapp`
 
 The times listed on the site show the game time in the chosen team's home time zone, even for away games. This works automatically even if you change the team, their local home time is in the NBA data set.
 
