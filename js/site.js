@@ -13,12 +13,6 @@ function isDateLaterThan(a, b) {
   return false;
 }
 
-/* from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date */
-function ISODateString(d){
-  function pad(n){return n<10 ? '0'+n : n;}
-  return d.getUTCFullYear()+'-'+ pad(d.getUTCMonth()+1)+'-'+ pad(d.getUTCDate());
-}
-
 function GetFormattedDate(date) {
   month = date.getMonth() + 1;
   dayOfMonth = date.getDate();
@@ -116,7 +110,6 @@ $(document).ready(function(){
       $("#game .location").text(todaysGame.an);
       $("#yesno .tstart").text(todaysGame.time);
 
-      $("#game abbr").attr('title', ISODateString(nextGame.date));
       if (todaysGame.hn == teamName) {
         // today's game is a home game, since our team is home the visitors are who we play
         $("body").addClass("home");
