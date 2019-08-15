@@ -49,7 +49,8 @@ DATE_KEY = 'd'; # datetime of the game in the desired team's time zone
 # if that was desireable
 TEAMS_TO_UPDATE_NAMES_AND_SITES = {}
 TEAMS_TO_UPDATE_NAMES_AND_SITES['Warriors'] = 'http://isthereawarriorsgametonight.com/'
-# TEAMS_TO_UPDATE_NAMES_AND_SITES['Raptors'] = 'no website currently' # just using this for testing
+TEAMS_TO_UPDATE_NAMES_AND_SITES['Raptors'] = 'http://isthereawarriorsgametonight.com/Raptors'
+TEAMS_TO_UPDATE_NAMES_AND_SITES['Trail Blazers'] = 'http://isthereawarriorsgametonight.com/Trail%20Blazers'
 # TEAMS_TO_UPDATE_NAMES_AND_SITES['Pelicans'] = ['site1.com', 'site2.com'] # just using this for testing
 
 schedulesToExport = {}
