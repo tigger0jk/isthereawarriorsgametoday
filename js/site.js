@@ -131,6 +131,7 @@ $(document).ready(function(){
                 $("#yesno").css("border-color", "#000"); // todo shouldn't this #000 be in css somewhere?
              }
             $("#yesno .vsthe").text(" vs the ");
+            $("#yesno .attime").text(" at ");
             $("#game").show();
             populateNextGame(nextGame);
         }
