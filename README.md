@@ -29,12 +29,13 @@ To update the schedule(s), run `python updateSchedules.py` (see comments in that
 ## Things that are currently hardcoded for the Warriors / things you have to do for another team:
 * Add or replace the team in the `updateSchedules.py` variable `TEAMS_TO_UPDATE_NAMES_AND_SITES` - this name must match the exact NBA json team name
 * run `python updateSchedules.py` to generate the schedule for your team
-* Change the `teamName` variable in `js/site.js` to your team - this name must match the exact NBA json team name
-* update index.html to remove references to "Warriors" - most of the meta attributes need to change and a few hardcoded pieces of text
+* Make a subdirectory for your team with the name exactly matching the exact NBA json team name
 * add a css override for your team in `css/<team>.css` - copy paste an existing one or rename it and swap the colors and font (the default font probably makes more sense than copperplate unless you're the warriors). Can override other stuff as desired
-* include your css file in `css/site.css` instead of the warriors css
+* copy `index.html` from /Warriors/ or another team directory into your subdirectory.
+* modify that `index.html` to remove references to warriors or that team - most of the meta attributes need to change and a few hardcoded pieces of text
+* include your css file in your new `index.html` instead of the warriors css
 * update `about.html`
-* update `manifest.webapp`
+* update `manifest.webapp` - TODO this should be in subdirectories I think
 
 The times listed on the site show the game time in the chosen team's home time zone, even for away games. This works automatically even if you change the team, their local home time is in the NBA data set.
 
