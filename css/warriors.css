@@ -6,8 +6,9 @@
   /* the warriors don't use copperplate anymore since the June 2019 rebrand
    * but I don't have a good equivalent for the new custom font*/
   --yes-no-font-family: copperplate;
-  --main-text-font-family: copperplate;
-  /*--main-text-font-family: Helvetica, Arial, sans-serif;*/
+  --main-text-font-family: Helvetica, Arial, sans-serif;
+  --my-team-font-family: copperplate;
 }
 
-
+/* uppercase is good for the warriors because copperplate looks weird with just the team name capitalized */
+.myteam { text-transform: uppercase; }

@@ -50,6 +50,24 @@ function GetTimeFromDate(date) {
     return hour + ":" + pad(minute) + period;
 }
 
+function populateNextGame(nextGame) {
+  if (nextGame.hn == teamName) {
+    // next game is home
+    $("#next .myteam").text(nextGame.hn);
+    $("#next .homeawayvs").text(" at home vs the ");
+    $("#next .opponent").text(nextGame.vn);
+  } else {
+    $("#next .myteam").text(nextGame.vn);
+    $("#next .homeawayvs").text(" away at the ");
+    $("#next .opponent").text(nextGame.hn);
+  }
+  //add small text for next game
+  $("#next .next-location").text(nextGame.an);
+  $("#next .nstart").text(nextGame.time);// todo should this say "at X:XX"?
+  $("#next .next-day").text(GetFormattedDateWithWeekday(nextGame.date));
+  $("#next").show();
+}
+
 $(document).ready(function(){
     var url = 'data/' + teamName + '_schedule.json';
 
@@ -60,19 +78,6 @@ $(document).ready(function(){
     // var today = new Date(2019, 9, 27, 8, 0, 0, 0); //second game day for testing
     var nextGame = null;
     var todaysGame = null;
-
-    // TODO clean this up?
-    // Format date as MM/DD/YY
-    // var curr_date = today.getDate();
-    // var curr_month = today.getMonth() + 1;
-    // var curr_year = today.getFullYear();
-    // var dateString = curr_month + "/" + curr_date + "/" + curr_year;
-
-    // Create datepicker
-    // $("#datecheck").html('Checking <input id="datepicker" type="text">');
-    // $("#datepicker").datepicker();
-// 
-    // $(".datepicker").datepicker.("setDate", dateString);
 
     // Check for game today
     $.getJSON(url, function(json){
@@ -109,49 +114,30 @@ $(document).ready(function(){
         if (todaysGame) {
             $(".fill-in").text("YES");
             $("#game .location").text(todaysGame.an);
-            $("#game .tstart").text(todaysGame.time);
+            $("#yesno .tstart").text(todaysGame.time);
 
             $("#game abbr").attr('title', ISODateString(nextGame.date));
             if (todaysGame.hn == teamName) {
-                // home game, since our team is home the visitors are who we play
-                $("#game .summary").text(teamName + " play the " + todaysGame.vn);
+                // today's game is a home game, since our team is home the visitors are who we play
                 $("body").addClass("home");
                 $("#yesno .homeaway").text("At home");
+                $("#yesno .opponent").text(todaysGame.vn);
              }
              else {
                 // away game, since our team is away the home team is who we play
-                $("#game .summary").text(teamName + " play the " + todaysGame.hn);
                 $("body").addClass("away");
                 $("#yesno .homeaway").text("Away");
-                $("#yesno").css("border-color", "#000");
+                $("#yesno .opponent").text(todaysGame.hn);
+                $("#yesno").css("border-color", "#000"); // todo shouldn't this #000 be in css somewhere?
              }
+            $("#yesno .vsthe").text(" vs the ");
             $("#game").show();
-
-            //add small text for next game
-            $("#next .next-location").text(nextGame.an);
-            $("#next .nstart").text(nextGame.time);
-            $("#next .next-day").text(GetFormattedDateWithWeekday(nextGame.date));
-            $("#next").show();
-
+            populateNextGame(nextGame);
         }
         else {
           $(".fill-in").text("NO");
-          // console.log(ISODateString(nextGame.date));
-          // $("#game .date").text(ISODateString(nextGame.date)); // TODO this is unused??
-          if (nextGame.hn == teamName) {
-            // home game, since our team is home the visitors are who we play
-            $("#game .summary").text(teamName + " will play the " + nextGame.vn);
-            // $("#nextgame .location").addClass("homegame");
-            // $("body").addClass("homegame-bg");
-          } else {
-            // away game, since our team is away the home team is who we play
-            $("#game .summary").text(teamName + " will play the " + nextGame.hn);
-          }
-          $("#game .location").text(nextGame.an);
-
-          $("#game .day").text("on " + GetFormattedDateWithWeekday(nextGame.date));
-          $("#game .tstart").text(nextGame.time);
-          $("#game").show();
+          $("#yesno .todaydesc").remove();
+          populateNextGame(nextGame);
         }
     });
 });

@@ -23,29 +23,41 @@
         </script>
     </head>
     <body>
-            <h1 id="isthere">Is there a Warriors game tonight?</h1>
+      <!--<h1 id="isthere">Is there a <span class="myteam">Warriors</span> game tonight?</h1>-->
+            <div id="isthere">Is there a <span class="myteam">Warriors</span> game tonight?</div>
+            <hr class="separator">
             <div id="yesno">
                 <span class="fill-in">...</span>
                 <br />
-                <span class="homeaway"></span>
+                <span class="todaydesc">
+                  <span class="homeaway"></span>
+                  <span class="vsthe"></span>
+                  <span class="opponent"></span></br>
+                  <span class="tstart"></span>
+                </span>
             </div>
+            <hr class="separator">
             
             <div id="game" class="h-event vevent">
-                <span class="p-summary summary">Warriors play the 
-                      <span class="opponent"></span>
-                </span>
+              <!--<span class="p-summary summary">
+                <span class="myteam">Warriors</span> play the <span class="opponent"></span>
+              </span>-->
                 <span class="day"></span>
                 <span class="dt-start dtstart">
                     <abbr class="value"></abbr>
-                        <span class="tstart value"></span>
-                        at <span class="p-location location"></span>
+                    <!--<span class="t-homeaway value"></span>-->
+                    <!--<span class="tstart value"></span>-->
+                        <!--at <span class="p-location location"></span>--> <!-- TODO if I'm not using locations I should remove them in js-->
                 </span>
             </div>
             <div id="next" class="h-event vevent">
                 <span class="dt-next dtnext">
                     <abbr class="value"></abbr>
-                        Next game is at <span class="nstart value"></span>
-                        at <span class="n-location next-location"></span>
+                    <span class="nextgame">Next game</span></br>
+                    <span class="myteam"></span><span class="homeawayvs"></span><span class="opponent"></span></br>
+                <!--<span class="n-homeaway value"></span>-->
+                        <span class="nstart value"></span>
+                        <!--at <span class="n-location next-location"></span>-->
                         on <span class="n-day next-day"></span>
                 </span>
                 <span class="dt-end dtend">
@@ -53,7 +65,6 @@
                 </span>
             </div>
 
-            <div id="datecheck"></div>
             <div id="footer"><a href="about.html">about</a></div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>        
