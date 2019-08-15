@@ -36,12 +36,16 @@ function GetTimeFromDate(date) {
     hour = date.getHours();
     minute = date.getMinutes();
     period = "am";
-    if (hour > 12) {
-      hour = hour % 12;
+    if (hour >= 12) {
       period = "pm";
     }
+    if (hour > 12) {
+      hour = hour % 12;
+    }
     if(hour == 0) {
+      // midnight, hope there aren't games at this time
       hour = 12;
+      period = "am";
     }
     return hour + ":" + pad(minute) + period;
 }
