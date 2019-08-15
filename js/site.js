@@ -57,7 +57,7 @@ function populateNextGame(nextGame) {
   }
   //add small text for next game
   $("#next .next-location").text(nextGame.an);
-  $("#next .nstart").text(nextGame.time);// todo should this say "at X:XX"?
+  $("#next .nstart").text(nextGame.time);
   $("#next .next-day").text(GetFormattedDateWithWeekday(nextGame.date));
   $("#next").show();
 }
@@ -120,7 +120,6 @@ $(document).ready(function(){
         $("body").addClass("away");
         $("#yesno .homeaway").text("Away");
         $("#yesno .opponent").text(todaysGame.hn);
-        $("#yesno").css("border-color", "#000"); // todo shouldn't this #000 be in css somewhere?
       }
       $("#yesno .vsthe").text(" vs the ");
       $("#yesno .attime").text(" at ");
