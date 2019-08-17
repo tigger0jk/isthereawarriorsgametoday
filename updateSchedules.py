@@ -41,7 +41,7 @@ HOME_TEAM_CITY_KEY = 'hc'
 VISITOR_TEAM_NAME_KEY = 'vn'
 VISITOR_TEAM_CITY_KEY = 'vc'
 ARENA_NAME_KEY = 'an'
-DATE_KEY = 'd'; # datetime of the game in the desired team's time zone
+DATE_KEY = 'd' # datetime of the game in the desired team's time zone
 
 # list of all the teams that we want to save the schedules for with their associated website(s)
 # this could use team ids (tid) instead of names but I think names might actually be more robust
@@ -94,7 +94,7 @@ def assertDictHasKeys( dict, keys, dictName = "dict" ):
         assertDictHasKey(dict, key, dictName)
 
 assertDictHasKey(scheduleData, NBA_LEAGUE_SCHEDULE_KEY, 'scheduleData')
-leagueSchedule = scheduleData[NBA_LEAGUE_SCHEDULE_KEY];
+leagueSchedule = scheduleData[NBA_LEAGUE_SCHEDULE_KEY]
 
 for subSchedule in leagueSchedule:
     assertDictHasKey(subSchedule, NBA_MONTHLY_SCHEDULE_KEY, 'subSchedule')
@@ -106,8 +106,8 @@ for subSchedule in leagueSchedule:
     for game in games:
         # validate the game has the data we need
         assertDictHasKeys(game, [NBA_HOME_KEY, NBA_VISITOR_TIME_KEY, NBA_ARENA_NAME_KEY, NBA_HOME_KEY, NBA_VISITOR_KEY], 'game')
-        homeTeam = game[NBA_HOME_KEY];
-        visitorTeam = game[NBA_VISITOR_KEY];
+        homeTeam = game[NBA_HOME_KEY]
+        visitorTeam = game[NBA_VISITOR_KEY]
         assertDictHasKeys(homeTeam, [NBA_TEAM_NAME_KEY, NBA_TEAM_CITY_KEY], 'homeTeam')
         assertDictHasKeys(visitorTeam, [NBA_TEAM_NAME_KEY, NBA_TEAM_CITY_KEY], 'visitorTeam')
 
