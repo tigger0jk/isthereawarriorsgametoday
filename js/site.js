@@ -9,7 +9,7 @@ if(teamPath.length > 0) {
   // currently other teams are site.com/teamName instead of just site.com
   // so our path is up one level from normal
   basePath = '../';
-  console.log(teamName);
+  // console.log(teamName);
 }
 
 function isDateLaterThan(a, b) {
@@ -97,12 +97,12 @@ $(document).ready(function(){
       nextGameDate = game.date;
 
       // Uncomment for debugging
-      console.log("Today: " + today + " - Looking at game: " + nextGameDate);
+      // console.log("Today: " + today + " - Looking at game: " + nextGameDate);
 
       if (!nextGame && isDateLaterThan(nextGameDate, today)){
         nextGame = game;
-        console.log("set first game: ");
-        console.log(nextGame);
+        // console.log("set first game: ");
+        // console.log(nextGame);
         return false; // break the loop
       }
 
@@ -111,9 +111,9 @@ $(document).ready(function(){
         nextGame = json.games[i+1];
         nextGame.date = new Date(nextGame.d);
         nextGame.time = GetTimeFromDate(nextGame.date);
-        console.log("set a different game: ");
-        console.log(todaysGame);
-        console.log(nextGame);
+        // console.log("set a different game: ");
+        // console.log(todaysGame);
+        // console.log(nextGame);
         return false; // break the loop
       }
     });
