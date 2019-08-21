@@ -1,0 +1,20 @@
+{  
+  "version": "1.0",  
+  "name": "Is there a Raptors game today?",  
+  "description": "Are the Raptors playing today? Get info about the next game.",
+  "icons": {  
+    "16": "/img/icon-16.png",  
+    "48": "/img/icon-48.png",  
+    "128": "/img/icon-128.png"  
+  },
+  "developer": {  
+    "name": "Patrick Fay",  
+    "url": "http://pfay.us"  
+  },
+  "installs_allowed_from": [  
+    "https://marketplace.firefox.com",
+    "https://marketplace.mozilla.org",
+    "https://apps-preview.mozilla.org"  
+  ],  
+  "default_locale": "en"  
+}
