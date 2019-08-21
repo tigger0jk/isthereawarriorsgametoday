@@ -43,15 +43,18 @@ VISITOR_TEAM_CITY_KEY = 'vc'
 ARENA_NAME_KEY = 'an'
 DATE_KEY = 'd' # datetime of the game in the desired team's time zone
 
+teams = ["Bucks", "Bulls", "Cavaliers", "Celtics", "Clippers", "Grizzlies", "Hawks", "Heat", "Hornets", "Jazz", "Kings", "Knicks", "Lakers", "Magic", "Mavericks", "Nets", "Nuggets", "Pacers", "Pelicans", "Pistons", "Raptors", "Rockets", "Sixers", "Spurs", "Suns", "Thunder", "Timberwolves", "Trail Blazers", "Warriors", "Wizards"]
+
 # list of all the teams that we want to save the schedules for with their associated website(s)
 # this could use team ids (tid) instead of names but I think names might actually be more robust
 # these names or tids could be looked up or converted from the team data in http://data.nba.com/
 # if that was desireable
 TEAMS_TO_UPDATE_NAMES_AND_SITES = {}
-TEAMS_TO_UPDATE_NAMES_AND_SITES['Warriors'] = 'http://isthereawarriorsgametonight.com/'
-TEAMS_TO_UPDATE_NAMES_AND_SITES['Raptors'] = 'http://isthereawarriorsgametonight.com/Raptors'
-TEAMS_TO_UPDATE_NAMES_AND_SITES['Trail Blazers'] = 'http://isthereawarriorsgametonight.com/Trail%20Blazers'
-# TEAMS_TO_UPDATE_NAMES_AND_SITES['Pelicans'] = ['site1.com', 'site2.com'] # just using this for testing
+for team in teams:
+    if team == 'Warriors':
+        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'http://isthereawarriorsgametonight.com'
+    else:
+        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'http://isthereagametonight.com/' + urllib.parse.quote(team)
 
 schedulesToExport = {}
 for teamName, website in TEAMS_TO_UPDATE_NAMES_AND_SITES.items():
