@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "name": "Is there a Trail Blazers game today?",
-  "description": "Are the Trail Blazers playing today? Get info about the next game.",
+  "name": "Is there a Hawks game today?",
+  "description": "Are the Hawks playing today? Get info about the next game.",
   "icons": {
     "16": "../img/icon-16.png",
     "48": "../img/icon-48.png",
