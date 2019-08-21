@@ -1,0 +1,26 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  --team-foreground-color: #00471B;
+  --team-background-color: #EEE1C6;
+  --team-tertiary-color: #0077C0;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+.away { background: var(--team-background-color); color: #000; }
+/* Wasn't sure what the best "away team" look is for the bucks
+ * using green for the separator and link is pretty subtle, looks like black
+ * using cream is too light, doesn't pop off the white background
+ * using blue doesn't feel enough like the bucks
+ * currently we're just changing the away background to be cream but with black text
+ * The difference for home games is that they use green text - it's a bit subtle but both look good I think*/
+
+/*.awayseparator { border-top: 1px solid var(--team-tertiary-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-tertiary-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-tertiary-color); }*/
+/*.awayseparator { border-top: 1px solid var(--team-background-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-background-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-background-color); }*/

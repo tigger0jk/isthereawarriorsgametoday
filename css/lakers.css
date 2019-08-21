@@ -1,0 +1,15 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  /* I like these reversed as well but I think purple on yellow is more iconic lakers */
+  --team-foreground-color: #552583;
+  --team-background-color: #FDB927;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+.awayseparator { border-top: 1px solid var(--team-background-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-background-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-background-color); }

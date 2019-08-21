@@ -1,0 +1,11 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  --team-foreground-color: #C8102E;
+  --team-background-color: #FFF;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }

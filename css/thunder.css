@@ -1,0 +1,15 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  --team-foreground-color: #FFF;
+  --team-background-color: #007AC1;
+  --team-tertiary-color: #EF3B24;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+.awayseparator { border-top: 1px solid var(--team-tertiary-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-tertiary-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-tertiary-color); }

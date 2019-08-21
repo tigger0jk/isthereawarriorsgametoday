@@ -1,0 +1,16 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  /* this could maybe be the gold #85714D instead but I think white is more reminiscent of the jerseys*/
+  --team-foreground-color: #FFF;
+  --team-background-color: #0C2340;
+  --team-tertiary-color: #C8102E;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+.awayseparator { border-top: 1px solid var(--team-tertiary-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-tertiary-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-tertiary-color); }

@@ -1,0 +1,15 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  --team-foreground-color: #C1D32F;
+  --team-background-color: #E03A3E;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+/* for the hawks we'll use their secondary color as if it was the primary color for away games */
+.awayseparator { border-top: 1px solid var(--team-background-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-background-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-background-color); }

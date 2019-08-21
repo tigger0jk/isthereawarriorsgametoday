@@ -1,0 +1,16 @@
+/* TODO TEAM FONT */
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
+:root {
+  /* https://mediacentral.nba.com/wp-content/uploads/logos/nba/cle/Cleveland_Cavaliers_Logosheet.jpg */
+  --team-foreground-color: #6F263D;
+  --team-background-color: #000;
+  --team-tertiary-color: #FFB81C;
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
+}
+
+.myteam { text-transform: uppercase; }
+.awayseparator { border-top: 1px solid var(--team-tertiary-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-tertiary-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-tertiary-color); }

@@ -15,10 +15,13 @@ body {font-family: var(--main-text-font-family); line-height:1.3; text-align:cen
 .nextgame { display: inline-block; margin-bottom: .4rem; }
 #footer { margin-top: 1rem; font-size: 20px; }
 .separator { text-align: center; display: block; height: 1px; border: 0; border-top: 1px solid var(--team-foreground-color); margin: 0 auto; margin-top: 1.75rem; margin-bottom: 1.75rem; padding: 0; width:80% }
+.awayseparator { text-align: center; display: block; height: 1px; border: 0; border-top: 1px solid var(--team-foreground-color); margin: 0 auto; margin-top: 1.75rem; margin-bottom: 1.75rem; padding: 0; width:80% }
 
-a:link, a:visited { text-decoration: none; color: var(--team-foreground-color); }
-a:hover { border-bottom: 2px solid var(--team-foreground-color); }
-a#counter:hover { border: 0; text-decoration: underline; }
+.homelink a:link, .homelink a:visited { text-decoration: none; color: var(--team-foreground-color); }
+.homelink a:hover { border-bottom: 2px solid var(--team-foreground-color); }
+.awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-foreground-color); }
+.awaylink a:hover { border-bottom: 2px solid var(--team-foreground-color); }
+/*a#counter:hover { border: 0; text-decoration: underline; }*/
 
 .fill-in { line-height:.9; font-family: var(--yes-no-font-family), arial, sans-serif; font-size: 20vw; }
 .todaydesc { font-weight: bold; font-size: 2rem; }
