@@ -3,9 +3,9 @@
   "name": "Is there a Lakers game today?",
   "description": "Are the Lakers playing today? Get info about the next game.",
   "icons": {
-    "16": "../img/icon-16.png",
-    "48": "../img/icon-48.png",
-    "128": "../img/icon-128.png"
+    "16": "http://isthereagametonight.com/img/icon-16.png",
+    "48": "http://isthereagametonight.com/img/icon-48.png",
+    "128": "http://isthereagametonight.com/img/icon-128.png"
   },
   "developer": {
     "name": "Patrick Fay",
