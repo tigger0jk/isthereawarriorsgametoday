@@ -34,6 +34,8 @@ teams = [
     ["WAS", "Washington", "Wizards"]
 ]
 
+siteUrl = "http://isthereagametonight.com" # TODO make this https once https is up
+aboutUri = "about.html"
 for teamAcronym, teamCity, teamName in teams:
-    makeTeamDir.makeTeamDirFromTemplate(teamCity, teamName, teamAcronym)
+    makeTeamDir.makeTeamDirFromTemplate(teamCity, teamName, teamAcronym, siteUrl, aboutUri)
 
