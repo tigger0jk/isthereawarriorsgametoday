@@ -3,9 +3,9 @@
   "name": "Is there a Pelicans game today?",
   "description": "Are the Pelicans playing today? Get info about the next game.",
   "icons": {
-    "16": "http://isthereagametonight.com/img/icon-16.png",
-    "48": "http://isthereagametonight.com/img/icon-48.png",
-    "128": "http://isthereagametonight.com/img/icon-128.png"
+    "16": "https://isthereagametonight.com/img/icon-16.png",
+    "48": "https://isthereagametonight.com/img/icon-48.png",
+    "128": "https://isthereagametonight.com/img/icon-128.png"
   },
   "developer": {
     "name": "Patrick Fay",
