@@ -78,14 +78,13 @@ $(document).ready(function(){
   var url = basePath + 'data/' + teamName + '_schedule.json';
 
   var today = new Date();
-  // TODO remove some of these
   // var today = new Date(2019, 9, 22, 0, 0, 0, 0); // raptors first game day for testing
   // var today = new Date(2019, 9, 23, 0, 0, 0, 0); // blazers first game day for testing
   // var today = new Date(2019, 9, 24, 0, 0, 0, 0); // first game day for testing
   // var today = new Date(2019, 9, 25, 0, 0, 0, 0); // after first game day for testing
   // var today = new Date(2019, 9, 26, 0, 0, 0, 0); // after first game day for testing
   // var today = new Date(2019, 9, 27, 8, 0, 0, 0); // second game day for testing
-  var today = new Date(2019, 9, 30, 8, 0, 0, 0); // wizards first home game this far out :o
+  // var today = new Date(2019, 9, 30, 8, 0, 0, 0); // wizards first home game this far out :o
   var nextGame = null;
   var todaysGame = null;
 
