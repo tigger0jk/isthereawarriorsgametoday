@@ -26,16 +26,13 @@ It's because you're trying to open the page without a web server running. To tes
 
 To update the schedule(s), run `python updateSchedules.py` (see comments in that file, the year may need to be updated). This will pull the schedule from the NBA and put it into a better format for us. If you're running your own version of the site, you may want to do this semi-regularly on a cron to pick up scheduling changes (especially during playoffs).
 
-## Things that are currently hardcoded for the Warriors / things you have to do for another team:
-* Add or replace the team in the `updateSchedules.py` variable `TEAMS_TO_UPDATE_NAMES_AND_SITES` - this name must match the exact NBA json team name
-* run `python updateSchedules.py` to generate the schedule for your team
-* Make a subdirectory for your team with the name exactly matching the exact NBA json team name
-* add a css override for your team in `css/<team>.css` - copy paste an existing one or rename it and swap the colors and font (the default font probably makes more sense than copperplate unless you're the warriors). Can override other stuff as desired
-* copy `index.html` from /Warriors/ or another team directory into your subdirectory.
-* modify that `index.html` to remove references to warriors or that team - most of the meta attributes need to change and a few hardcoded pieces of text
-* include your css file in your new `index.html` instead of the warriors css
-* update `about.html`
-* update `manifest.webapp` - TODO this should be in subdirectories I think
+## Things that you need to do to run a single serving site for your specific team:
+Maybe you paid for your own single serving domain or just don't like the version I'm running at http://isthereagametonight.com/<yourTeam>, here's what you can do if you only care about running your specific team at the root (like I'm doing at http://isthereawarriorsgametonight.com)
+* Modify the `makeTeamRoot.py` script with your relevant site name, about URI and team info
+* Run the script `python3.5 makeTeamRoot.py`
+* Change the `teamName` var in `js/site.js` at the top to be your team name
+* Make your own about page that you referenced above or modify one of the existing ones
+* If you're on your own fork you can commit and push those changes
 
 The times listed on the site show the game time in the chosen team's home time zone, even for away games. This works automatically even if you change the team, their local home time is in the NBA data set.
 

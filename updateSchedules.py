@@ -52,9 +52,9 @@ teams = ["Bucks", "Bulls", "Cavaliers", "Celtics", "Clippers", "Grizzlies", "Haw
 TEAMS_TO_UPDATE_NAMES_AND_SITES = {}
 for team in teams:
     if team == 'Warriors':
-        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'http://isthereawarriorsgametonight.com'
+        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'https://isthereawarriorsgametonight.com'
     else:
-        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'http://isthereagametonight.com/' + urllib.parse.quote(team)
+        TEAMS_TO_UPDATE_NAMES_AND_SITES[team] = 'https://isthereagametonight.com/' + urllib.parse.quote(team)
 
 schedulesToExport = {}
 for teamName, website in TEAMS_TO_UPDATE_NAMES_AND_SITES.items():
