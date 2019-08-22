@@ -21,7 +21,7 @@ def makeTeamDirFromTemplate(teamCity, teamName, teamAcronym, siteUrl, aboutUri, 
             os.mkdir(dirPath)
         except OSError as e:
             print ("Creation of the directory %s failed: " % dirPath + str(e))
-            # TODO sys.exit() here? maybe no need...
+            # sys.exit() here? no need...
             # some failures are because the folder already exists, which is fine.
             # We could parse that error or just storm ahead hopefully, storming ahead
         else:
