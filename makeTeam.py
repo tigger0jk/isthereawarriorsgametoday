@@ -42,6 +42,7 @@ def makeTeamDirFromTemplate(teamCity, teamName, teamAcronym):
                     outLine = outLine.replace("%TEAM_NAME_LOWER_NO_SPACE%", teamName.lower().replace(" ", ""))
                     outLine = outLine.replace("%TEAM_CITY_LOWER%", teamCity.lower())
                     outLine = outLine.replace("%TEAM_ACRONYM_LOWER%", teamAcronym.lower())
+                    outLine = outLine.replace("%SITE_URL%", "http://isthereagametonight.com") # TODO make this https once https is up
                     outputFile.write(outLine)
 
 # copied this from https://en.wikipedia.org/wiki/Wikipedia:WikiProject_National_Basketball_Association/National_Basketball_Association_team_abbreviations
