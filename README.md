@@ -48,3 +48,4 @@ If you don't want to hack on the project or have little spare time, you still ca
 ## TODOs
 * TODO ;)
 * Move TODOs / issues from my own notes into here / github issues page
+* In `updateSchedules.py` the schedule year is hardcoded as 2019, see TODO in that class.
