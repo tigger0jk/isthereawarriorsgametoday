@@ -1,12 +1,14 @@
+@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+
 :root {
   --team-foreground-color: #D2612F;
   --team-background-color: #000;
-  --yes-no-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
-  --my-team-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
+  --yes-no-font-family: 'Quantico', sans-serif;
+  --my-team-font-family: 'Quantico', sans-serif;
   --my-team-font-weight: bold;
   --my-team-font-style: normal;
   --my-team-font-size: 1.5rem; /* override this sparingly */
-  --opponent-team-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
+  --opponent-team-font-family: 'Quantico', sans-serif;
   --main-text-font-family: Helvetica, Arial, sans-serif;
 }
 
