@@ -1,11 +1,10 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
 
 :root {
   --team-foreground-color: #C4CED4;
   --team-background-color: #0077C0;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Squada One', cursive;
+  --my-team-font-family: 'Squada One', cursive;
 }
 
 .myteam { text-transform: uppercase; }

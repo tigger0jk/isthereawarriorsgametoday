@@ -1,11 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* hawks use a custom font, bungee isn't really close but it's not too bad */
+@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
 
 :root {
   --team-foreground-color: #C1D32F;
   --team-background-color: #E03A3E;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Bungee', cursive;
+  --my-team-font-family: 'Bungee', cursive;
+  --my-team-font-weight: regular;
 }
 
 .myteam { text-transform: uppercase; }

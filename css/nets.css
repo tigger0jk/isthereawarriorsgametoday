@@ -1,11 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Nets font is custom afaik (maybe made by Jay-Z himself!), Asap isn't a bad replacement */
+@import url('https://fonts.googleapis.com/css?family=Asap:600&display=swap');
 
 :root {
   --team-foreground-color: #FFF;
   --team-background-color: #000;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Asap', sans-serif;
+  --my-team-font-family: 'Asap', sans-serif;
+  --my-team-font-weight: regular;
 }
 
 .myteam { text-transform: uppercase; }

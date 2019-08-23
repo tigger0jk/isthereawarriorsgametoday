@@ -1,11 +1,11 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Custom font, hard to match, could maybe use Audimat Mono Bold instead */
+@import url('https://fonts.googleapis.com/css?family=Barlow:800&display=swap');
 
 :root {
   --team-foreground-color: #FEC524;
   --team-background-color: #0E2240;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Barlow', sans-serif;
+  --my-team-font-family: 'Barlow', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

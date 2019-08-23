@@ -1,13 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* The Pelicans wordmark is hard to match, Poppins is emulating the bottom text on the logo */
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 :root {
   /* this could maybe be the gold #85714D instead but I think white is more reminiscent of the jerseys*/
   --team-foreground-color: #FFF;
   --team-background-color: #0C2340;
   --team-tertiary-color: #C8102E;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Poppins', sans-serif;
+  --my-team-font-family: 'Poppins', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

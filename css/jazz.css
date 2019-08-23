@@ -1,11 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Jost* from https://github.com/indestructible-type/Jost maintained by Owen Earl */
+/* Not gonna find a match for Jazz font let's get those sharp Z corners at least with Jost */
+@import url('https://indestructibletype.com/fonts/Jost.css');
 
 :root {
   --team-foreground-color: #F9A01B;
   --team-background-color: #002B5C;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Jost', sans-serif;
+  --my-team-font-family: 'Jost', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

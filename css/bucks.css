@@ -1,12 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* MKE Block Varsity is proprietary, using Teko as a free replacement */
+@import url('https://fonts.googleapis.com/css?family=Teko:500&display=swap');
 
 :root {
   --team-foreground-color: #00471B;
   --team-background-color: #EEE1C6;
   --team-tertiary-color: #0077C0;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Teko', sans-serif;
+  --my-team-font-family: 'Teko', sans-serif;
+  --my-team-font-weight: regular;
 }
 
 .myteam { text-transform: uppercase; }

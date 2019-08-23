@@ -1,11 +1,10 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Saira:900&display=swap');
 
 :root {
   --team-foreground-color: #C8102E;
   --team-background-color: #FFF;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Saira', sans-serif;
+  --my-team-font-family: 'Saira', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

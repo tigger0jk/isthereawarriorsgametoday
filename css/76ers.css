@@ -1,15 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Domine:700&display=swap');
 
 :root {
   --team-foreground-color: #FFF;
   --team-background-color: #006BB6;
   --team-tertiary-color: #ED174C;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Domine', serif;
+  --my-team-font-family: 'Domine', serif;
 }
 
-.myteam { text-transform: uppercase; }
 .awayseparator { border-top: 1px solid var(--team-tertiary-color); }
 .awaylink a:link, .awaylink a:visited { text-decoration: none; color: var(--team-tertiary-color); }
 .awaylink a:hover { border-bottom: 2px solid var(--team-tertiary-color); }

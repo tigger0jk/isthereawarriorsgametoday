@@ -1,12 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* can't match the rounded E but Oswald is otherwise good */
+@import url('https://fonts.googleapis.com/css?family=Oswald:500&display=swap');
 
 :root {
   --team-foreground-color: #FFF;
   --team-background-color: #007AC1;
   --team-tertiary-color: #EF3B24;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Oswald', sans-serif;
+  --my-team-font-family: 'Oswald', sans-serif;
+  --my-team-font-weight: regular;
 }
 
 .myteam { text-transform: uppercase; }

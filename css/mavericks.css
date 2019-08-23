@@ -1,12 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Mavs have a kind of crazy font, squada has that high M and a curved up C but it's still pretty far off */
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
 
 :root {
   --team-foreground-color: #B8C4CA;
   --team-background-color: #002B5E;
   --team-tertiary-color: #00538C;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Squada One', cursive;
+  --my-team-font-family: 'Squada One', cursive;
 }
 
 .myteam { text-transform: uppercase; }

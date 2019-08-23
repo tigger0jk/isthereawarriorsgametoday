@@ -1,11 +1,10 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:700i&display=swap');
 
 :root {
   --team-foreground-color: #98002E;
   --team-background-color: #000;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Noto Sans', sans-serif;
+  --my-team-font-family: 'Noto Sans', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

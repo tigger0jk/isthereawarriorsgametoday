@@ -1,13 +1,12 @@
+/* the warriors don't use copperplate anymore since the June 2019 rebrand
+ * but I don't have a good equivalent for the new custom font*/
 @import "https://use.typekit.net/qsy2ofg.css"; /* importing copperplate */
 
 :root {
   --team-foreground-color: #FFC72C;
   --team-background-color: #1D428A;
-  /* the warriors don't use copperplate anymore since the June 2019 rebrand
-   * but I don't have a good equivalent for the new custom font*/
   --yes-no-font-family: copperplate;
   --my-team-font-family: copperplate;
 }
 
-/* uppercase is good for the warriors because copperplate looks weird with just the team name capitalized */
 .myteam { text-transform: uppercase; }

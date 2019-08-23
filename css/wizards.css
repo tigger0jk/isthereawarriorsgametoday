@@ -1,11 +1,11 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Kanit is a decent match for the wizards custom font in the wordmark */
+@import url('https://fonts.googleapis.com/css?family=Kanit:700i&display=swap');
 
 :root {
   --team-foreground-color: #E31837;
   --team-background-color: #002B5C;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Kanit', sans-serif;
+  --my-team-font-family: 'Kanit', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

@@ -1,11 +1,11 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
 
 :root {
   --team-foreground-color: #002D62;
   --team-background-color: #FDBB30;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Roboto Condensed', sans-serif;
+  --my-team-font-family: 'Roboto Condensed', sans-serif;
+  --my-team-font-weight: regular;
 }
 
 .myteam { text-transform: uppercase; }

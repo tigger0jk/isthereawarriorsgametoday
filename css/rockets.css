@@ -1,11 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* squada doesn't really match the rockets wordmark but it's decently close to the logo font */
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
+/* the "n" in squada isn't very rockets, so using a diff font for yesno */
+@import url('https://fonts.googleapis.com/css?family=Dhurjati&display=swap');
 
 :root {
   --team-foreground-color: #CE1141;
   --team-background-color: #000;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Dhurjati', sans-serif;
+  --my-team-font-family: 'Squada One', cursive;
 }
 
 .myteam { text-transform: uppercase; }

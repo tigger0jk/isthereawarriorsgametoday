@@ -1,12 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* I'm not paying for Bodoni lol */
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:700i&display=swap');
 
 :root {
   /* I like these reversed as well but I think purple on yellow is more iconic lakers */
   --team-foreground-color: #552583;
   --team-background-color: #FDB927;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Noto Serif', serif;
+  --my-team-font-family: 'Noto Serif', serif;
 }
 
 .myteam { text-transform: uppercase; }

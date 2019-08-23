@@ -1,12 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Jost* from https://github.com/indestructible-type/Jost maintained by Owen Earl */
+/* Has that nize sharp Z, not gonna get the G or R right but it's closer than most */
+@import url('https://indestructibletype.com/fonts/Jost.css');
 
 :root {
   --team-foreground-color: #5D76A9;
   --team-background-color: #12173F;
   --team-tertiary-color: #F5B112;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Jost', sans-serif;
+  --my-team-font-family: 'Jost', sans-serif;
 }
 
 .myteam { text-transform: uppercase; }

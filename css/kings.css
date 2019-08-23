@@ -1,12 +1,12 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* Squada has a good N for the kings, not gonna match that G though */
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
 
 :root {
   /*--team-foreground-color: #63727A;*/ /* this is kings gray, but it's a bit low contrast */
   --team-foreground-color: #63727A;
   --team-background-color: #5A2D81;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Squada One', cursive;
+  --my-team-font-family: 'Squada One', cursive;
 }
 
 .myteam { text-transform: uppercase; }

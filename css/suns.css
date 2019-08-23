@@ -1,11 +1,13 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
 
 :root {
   --team-foreground-color: #E56020;
   --team-background-color: #1D1160;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Squada One', cursive;
+  --my-team-font-family: 'Squada One', cursive;
+  --my-team-font-weight: regular;
+  --my-team-font-style: italic;
+  --my-team-font-size: 1.7rem; /* lowercase regular italic suns wasn't BIG enough */
 }
 
-.myteam { text-transform: uppercase; }
+.myteam { text-transform: lowercase; }

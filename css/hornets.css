@@ -1,11 +1,11 @@
-/* TODO TEAM FONT */
-@import "https://fonts.googleapis.com/css?family=Quantico&display=swap";
+/* ehhh squada has the high N of the hornets custom font but it is a bit round for them, best I can do now */
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
 
 :root {
   --team-foreground-color: #1D1160;
   --team-background-color: #00788C;
-  --yes-no-font-family: 'Quantico', sans-serif;
-  --my-team-font-family: 'Quantico', sans-serif;
+  --yes-no-font-family: 'Squada One', cursive;
+  --my-team-font-family: 'Squada One', cursive;
 }
 
 .myteam { text-transform: uppercase; }

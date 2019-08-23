@@ -4,6 +4,8 @@
   --yes-no-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
   --my-team-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
   --my-team-font-weight: bold;
+  --my-team-font-style: normal;
+  --my-team-font-size: 1.5rem; /* override this sparingly */
   --opponent-team-font-family: 'Permanent Marker'; /*TODO is this a good default for whatever random teams?*/
   --main-text-font-family: Helvetica, Arial, sans-serif;
 }
@@ -26,6 +28,6 @@ body {font-family: var(--main-text-font-family); line-height:1.3; text-align:cen
 .fill-in { line-height:.9; font-family: var(--yes-no-font-family), arial, sans-serif; font-size: 20vw; }
 .todaydesc { font-weight: bold; font-size: 2rem; }
 .home { background: var(--team-background-color); color: var(--team-foreground-color); }
-.myteam { font-weight: var(--my-team-font-weight); font-family: var(--my-team-font-family) }
-.opponent { font-family: var(--opponent-team-font-family) }
+.myteam { font-style: var(--my-team-font-style); font-weight: var(--my-team-font-weight); font-family: var(--my-team-font-family); font-size: var(--my-team-font-size);}
+.opponent { font-family: var(--opponent-team-font-family); }
 .away { background: #FFF; color: #000; }
