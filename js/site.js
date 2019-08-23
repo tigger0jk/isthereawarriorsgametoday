@@ -78,6 +78,11 @@ $(document).ready(function(){
   var url = basePath + 'data/' + teamName + '_schedule.json';
 
   var today = new Date();
+  // var today = new Date(2019, 9, 5, 0, 0, 0, 0); // preseason :o
+  // var today = new Date(2019, 9, 7, 0, 0, 0, 0); // preseason :o
+  // var today = new Date(2019, 9, 8, 0, 0, 0, 0); // preseason :o
+  // var today = new Date(2019, 9, 10, 0, 0, 0, 0); // preseason :o
+  // var today = new Date(2019, 9, 11, 0, 0, 0, 0); // preseason :o
   // var today = new Date(2019, 9, 22, 0, 0, 0, 0); // raptors first game day for testing
   // var today = new Date(2019, 9, 23, 0, 0, 0, 0); // blazers first game day for testing
   // var today = new Date(2019, 9, 24, 0, 0, 0, 0); // first game day for testing
