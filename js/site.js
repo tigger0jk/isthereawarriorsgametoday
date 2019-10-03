@@ -12,15 +12,16 @@ if(teamPath.length > 0) {
   // console.log(teamName);
 }
 
+// Compare just the year/month/day part of the date, ignore time of day
 function isDateLaterThan(a, b) {
-  if(a.getYear() > b.getYear()) {
-    return true;
+  if(a.getYear() != b.getYear()) {
+    return a.getYear() > b.getYear();
   }
-  if(a.getMonth() > b.getMonth()) {
-    return true;
+  if(a.getMonth() != b.getMonth()) {
+    return a.getMonth() > b.getMonth();
   }
-  if(a.getDate() > b.getDate()) {
-    return true;
+  if(a.getDate() != b.getDate()) {
+    return a.getDate() > b.getDate();
   }
   return false;
 }
