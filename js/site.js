@@ -91,6 +91,7 @@ $(document).ready(function(){
   // var today = new Date(2019, 9, 26, 0, 0, 0, 0); // after first game day for testing
   // var today = new Date(2019, 9, 27, 8, 0, 0, 0); // second game day for testing
   // var today = new Date(2019, 9, 30, 8, 0, 0, 0); // wizards first home game this far out :o
+  // var today = new Date(2020, 0, 24, 0, 0, 0, 0); // 2020 Paris Game, Bucks vs Hornets - game is at 8PM CET (3PM EST, 2PM Central)
   var nextGame = null;
   var todaysGame = null;
 
