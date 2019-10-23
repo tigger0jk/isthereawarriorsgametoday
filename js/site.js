@@ -13,48 +13,17 @@ if(teamPath.length > 0) {
 }
 
 // Compare just the year/month/day part of the date, ignore time of day
+// returns true if the first param is after the second, false otherwise
 function isDateLaterThan(a, b) {
-  if(a.getYear() != b.getYear()) {
-    return a.getYear() > b.getYear();
-  }
-  if(a.getMonth() != b.getMonth()) {
-    return a.getMonth() > b.getMonth();
-  }
-  if(a.getDate() != b.getDate()) {
-    return a.getDate() > b.getDate();
-  }
-  return false;
-}
-
-function GetFormattedDate(date) {
-  month = date.getMonth() + 1;
-  dayOfMonth = date.getDate();
-  return month+ "/" + dayOfMonth;
+  return moment(a).isAfter(b, 'day')
 }
 
 function GetFormattedDateWithWeekday(date) {
-  var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-  dayOfWeek = weekdays[date.getDay()];
-  return dayOfWeek + ", " + GetFormattedDate(date);
+  return moment(date).format('dddd, MM/DD')
 }
 
 function GetTimeFromDate(date) {
-  function pad(n){return n<10 ? '0'+n : n;}
-  hour = date.getHours();
-  minute = date.getMinutes();
-  period = "am";
-  if (hour >= 12) {
-    period = "pm";
-  }
-  if (hour > 12) {
-    hour = hour % 12;
-  }
-  if(hour == 0) {
-    // midnight, hope there aren't games at this time
-    hour = 12;
-    period = "am";
-  }
-  return hour + ":" + pad(minute) + period;
+  return moment(date).format('h:mma')
 }
 
 function populateNextGame(nextGame) {
