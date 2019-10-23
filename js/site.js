@@ -57,7 +57,7 @@ $(document).ready(function(){
       // Uncomment for debugging
       // console.log("Today: " + today + " - Looking at game: " + nextGameDate);
 
-      if (!nextGame && nextGameDate.isAfter(today)){
+      if (!nextGame && nextGameDate.isAfter(today, 'day')){
         nextGame = game;
         // console.log("set first game: ");
         // console.log(nextGame);
