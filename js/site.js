@@ -12,18 +12,12 @@ if(teamPath.length > 0) {
   // console.log(teamName);
 }
 
-// Compare just the year/month/day part of the date, ignore time of day
-// returns true if the first param is after the second, false otherwise
-function isDateLaterThan(a, b) {
-  return moment(a).isAfter(b, 'day')
+function GetFormattedDateWithWeekday(moment) {
+  return moment.format('dddd, MM/DD')
 }
 
-function GetFormattedDateWithWeekday(date) {
-  return moment(date).format('dddd, MM/DD')
-}
-
-function GetTimeFromDate(date) {
-  return moment(date).format('h:mma')
+function GetTimeFromDate(moment) {
+  return moment.format('h:mma')
 }
 
 function populateNextGame(nextGame) {
@@ -47,20 +41,7 @@ function populateNextGame(nextGame) {
 $(document).ready(function(){
   var url = basePath + 'data/' + teamName + '_schedule.json';
 
-  var today = new Date();
-  // var today = new Date(2019, 9, 5, 0, 0, 0, 0); // preseason :o
-  // var today = new Date(2019, 9, 7, 0, 0, 0, 0); // preseason :o
-  // var today = new Date(2019, 9, 8, 0, 0, 0, 0); // preseason :o
-  // var today = new Date(2019, 9, 10, 0, 0, 0, 0); // preseason :o
-  // var today = new Date(2019, 9, 11, 0, 0, 0, 0); // preseason :o
-  // var today = new Date(2019, 9, 22, 0, 0, 0, 0); // raptors first game day for testing
-  // var today = new Date(2019, 9, 23, 0, 0, 0, 0); // blazers first game day for testing
-  // var today = new Date(2019, 9, 24, 0, 0, 0, 0); // first game day for testing
-  // var today = new Date(2019, 9, 25, 0, 0, 0, 0); // after first game day for testing
-  // var today = new Date(2019, 9, 26, 0, 0, 0, 0); // after first game day for testing
-  // var today = new Date(2019, 9, 27, 8, 0, 0, 0); // second game day for testing
-  // var today = new Date(2019, 9, 30, 8, 0, 0, 0); // wizards first home game this far out :o
-  // var today = new Date(2020, 0, 24, 0, 0, 0, 0); // 2020 Paris Game, Bucks vs Hornets - game is at 8PM CET (3PM EST, 2PM Central)
+  var today = moment();
   var nextGame = null;
   var todaysGame = null;
 
@@ -69,24 +50,24 @@ $(document).ready(function(){
     var nextGameDate;
 
     $.each(json.games,function(i,game){
-      game.date = new Date(game.d);
+      game.date = moment(game.d);
       game.time = GetTimeFromDate(game.date);
       nextGameDate = game.date;
 
       // Uncomment for debugging
       // console.log("Today: " + today + " - Looking at game: " + nextGameDate);
 
-      if (!nextGame && isDateLaterThan(nextGameDate, today)){
+      if (!nextGame && nextGameDate.isAfter(today)){
         nextGame = game;
         // console.log("set first game: ");
         // console.log(nextGame);
         return false; // break the loop
       }
 
-      if(today.getYear() == nextGameDate.getYear() && today.getMonth() == nextGameDate.getMonth() && today.getDate() == nextGameDate.getDate()) {
+      if(today.isSame(nextGameDate, 'day')) {
         todaysGame = game;
         nextGame = json.games[i+1];
-        nextGame.date = new Date(nextGame.d);
+        nextGame.date = moment(nextGame.d);
         nextGame.time = GetTimeFromDate(nextGame.date);
         // console.log("set a different game: ");
         // console.log(todaysGame);
