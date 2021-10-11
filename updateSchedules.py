@@ -66,7 +66,7 @@ for teamName, website in TEAMS_TO_UPDATE_NAMES_AND_SITES.items():
 # TODO in theory this shouldn't be hardcoded
 # We could check if it's currently August or later, and if so use that year, otherwise use the previous year
 # Also possible that the NBA would change their data format for a new season though and this script would need other fixes
-seasonYear = "2019"
+seasonYear = "2021"
 
 scheduleUrl = "http://data.nba.com/data/10s/v2015/json/mobile_teams/nba/" + seasonYear + "/league/00_full_schedule.json"
 scheduleResponse = urllib.request.urlopen(scheduleUrl)
